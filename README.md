@@ -1,3 +1,32 @@
+# AIW - Azure for Developers
+
+Pre-requesits:
+
+-  Have an Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-app-service-extension&mktingSource=vscode-tutorial-app-service-extension).
+- Install [Node.js and npm](https://nodejs.org). Run the command `node --version` to verify that Node.js is installed.
+- Install [Visual Studio Code](https://code.visualstudio.com/).
+- The [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for Visual Studio Code.
+
+---
+
+Inital setup:
+
+Install Azure App Service Extentsion for Visual Studio Code:
+
+In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/getstarted/userinterface), select the **Azure** logo.
+
+1. In the **App Service** explorer, select **Sign in to Azure...** and follow the instructions.
+
+    In Visual Studio Code, you should see your Azure email address in the Status Bar and your subscription in the **AZURE APP SERVICE** explorer.
+
+
+Configure Azure Cosmos DB resource:
+
+`` Grab setup instructions from quickstart https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/cosmos-db/mongodb/quickstart-nodejs.md
+
+
+---
+
 # Project
 
 > This repo has been populated by an initial template to help get you started. Please
