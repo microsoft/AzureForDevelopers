@@ -69,9 +69,9 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
 ---
 
-### Configure and deploy app 
+## Configure and deploy app 
 
-#### Edit configuration
+### Edit configuration
 1. Fork repo
 1. Open forked repo with GitHub Desktop
 1. In GitHub Desktop, select "Open in Visual Studio Code"
@@ -81,7 +81,7 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
    MONGODB_URL="mongodb://<connection string>"
    ```
 
-#### Run locally
+### Run locally
 1. In the menu bar, expand **Terminal** > Select **New Terminal**
 1. Type
    ```.env
@@ -89,7 +89,7 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
    ```
 3. In a browser, navigate to http://localhost:3001. You should see something like this:
  
-#### Deploy app to Azure
+### Deploy app to Azure
 1. In Visual Studio Code, in the Activity Bar, select the Azure logo.
 1. Right-click on App Services and select **Create new Web App**. (A Linux container is used by default.)
 1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
@@ -101,7 +101,7 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
 1. Once deployment completes, select **Browse Website** in the notification popup. The browser should display the feedback form page. 
 
-#### Redeploy updates
+### Redeploy updates
 
 You can deploy changes to this app by making edits in Visual Studio Code, saving your files, and then redeploy to your Azure app. For example:
 
