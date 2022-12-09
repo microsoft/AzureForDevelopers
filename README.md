@@ -32,9 +32,7 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
 1. On the **New** page, search for and select **Azure Cosmos DB**.
 
-1. On the **Select API option** page, select the **Create** option within the **MongoDB** section. Azure Cosmos DB has five APIs: SQL, MongoDB, Gremlin, Table, and Cassandra. [Learn more about the API for MongoDB](../../introduction.md).
-
-   :::image type="content" source="../media/quickstart-nodejs/cosmos-api-choices.png" lightbox="../media/quickstart-nodejs/cosmos-api-choices.png" alt-text="Screenshot of select API option page for Azure Cosmos DB DB.":::
+1. On the **Select API option** page, select the **Create** option within the **MongoDB** section. Azure Cosmos DB has five APIs: SQL, MongoDB, Gremlin, Table, and Cassandra.
 
 1. On the **Create Azure Cosmos DB Account** page, enter the following information:
 
@@ -69,27 +67,39 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
 ---
 
-## Configure and deploy app 
+## Configure and deploy app
 
 ### Edit configuration
-1. Fork repo
+
+1. Fork [repo](https://github.com/microsoft/AzureForDevelopers)
 1. Open forked repo with GitHub Desktop
 1. In GitHub Desktop, select "Open in Visual Studio Code"
-1. In Visual Studio Code, open the .env file. Replace the MongoDB Connection String
+1. In Visual Studio Code, open the .env file. Replace the MongoDB  Connection String
+
    ```.env
    PORT=3001
    MONGODB_URL="mongodb://<connection string>"
    ```
 
 ### Run locally
+
 1. In the menu bar, expand **Terminal** > Select **New Terminal**
-1. Type
-   ```.env
+1. Install the node modules
+
+   ```cli
+    npm install
+   ```
+
+1. Start the app
+
+   ```cli
    node app.js
    ```
-3. In a browser, navigate to http://localhost:3001. You should see something like this:
- 
+
+1. In a browser, navigate to http://localhost:3001. You should see something like this:
+
 ### Deploy app to Azure
+
 1. In Visual Studio Code, in the Activity Bar, select the Azure logo.
 1. Right-click on App Services and select **Create new Web App**. (A Linux container is used by default.)
 1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
@@ -99,7 +109,7 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
     While Visual Studio Code provisions the Azure resources and deploys the code, it shows [progress notifications](https://code.visualstudio.com/api/references/extension-guidelines#notifications).
 
-1. Once deployment completes, select **Browse Website** in the notification popup. The browser should display the feedback form page. 
+1. Once deployment completes, select **Browse Website** in the notification popup. The browser should display the feedback form page.
 
 ### Redeploy updates
 
@@ -115,7 +125,7 @@ You can deploy changes to this app by making edits in Visual Studio Code, saving
     ```
 
     to
-    
+
     ```html
     <!-- Title -->
       <div class="row mb-3">
@@ -124,9 +134,7 @@ You can deploy changes to this app by making edits in Visual Studio Code, saving
     ```
 
 2. In the **App Service** explorer, select the **Deploy to Web App** icon again, confirm by clicking **Deploy** again.
-
 1. Wait for deployment to complete, then select **Browse Website** in the notification popup. You should see that the title is now colored orange.
-
 
 ---
 
