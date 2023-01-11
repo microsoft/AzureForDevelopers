@@ -13,9 +13,9 @@ Sample feedback form app using Azure App Service and Azure Cosmos DB.
 
 ---
 
-## Inital setup
+## Initial setup
 
-#### Install Azure App Service Extentsion for Visual Studio Code
+### Install Azure App Service Extentsion for Visual Studio Code
 
 In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/getstarted/userinterface?ocid=VTD_AzureDev), select the **Azure** logo.
 
@@ -23,8 +23,7 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
     In Visual Studio Code, you should see your Azure email address in the Status Bar and your subscription in the **AZURE APP SERVICE** explorer.
 
-
-#### Configure Azure Cosmos DB instance
+### Configure Azure Cosmos DB instance
 
 1. Sign in to the [Azure portal](https://portal.azure.com?ocid=VTD_AzureDev).
 
@@ -42,13 +41,9 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
    | Resource Group | Resource group name | Select a resource group, or select **Create new**, then enter a unique name for the new resource group. |
    | Account Name | A unique name | Enter a name to identify your Azure Cosmos DB account. The name will be used as part of a fully qualified domain name (FQDN) with a suffix of *documents.azure.com*, so the name must be globally unique. The name can only contain lowercase letters, numbers, and the hyphen (-) character. The name must also be between 3-44 characters in length. |
    | Location | The region closest to your users | Select a geographic location to host your Azure Cosmos DB account. Use the location that is closest to your users to give them the fastest access to the data. |
-   | Capacity mode |Provisioned throughput or Serverless|Select **Provisioned throughput** to create an account in [provisioned throughput](../../set-throughput.md) mode. Select **Serverless** to create an account in [serverless](../../serverless.md) mode. |
-   | Apply Azure Cosmos DB free tier discount | **Apply** or **Do not apply** |With Azure Cosmos DB free tier, you'll get the first 1000 RU/s and 25 GB of storage for free in an account. Learn more about [free tier](https://azure.microsoft.com/pricing/details/cosmos-db?ocid=VTD_AzureDev). |
-   | Version | MongoDB version  | Select the MongoDB server version that matches your application requirements.
-
-   > [!NOTE]
-   > You can have up to one free tier Azure Cosmos DB account per Azure subscription and must opt-in when creating the account. If you do not see the option to apply the free tier discount, this means another account in the subscription has already been enabled with free tier.
-   :::image type="content" source="../media/quickstart-nodejs/new-cosmos-account-page.png" lightbox="../media/quickstart-nodejs/new-cosmos-account-page.png" alt-text="Screenshot of new account page for Azure Cosmos DB DB SQL API.":::
+   | Capacity mode |Provisioned throughput or Serverless|Select **Provisioned throughput**. |
+   | Apply Azure Cosmos DB free tier discount | **Apply** or **Do not apply** | Select ***Apply*** With Azure Cosmos DB free tier, you'll get the first 1000 RU/s and 25 GB of storage for free in an account. Learn more about [free tier](https://azure.microsoft.com/pricing/details/cosmos-db?ocid=VTD_AzureDev). |
+   | Version | MongoDB version  | Use the default version.
 
 1. Select **Review + create**.
 
@@ -56,14 +51,12 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
 1. Select **Go to resource** to go to the Azure Cosmos DB account page. 
 
-
-
 1. From the Azure Cosmos DB for NoSQL account page, select the **Connection String** navigation menu option.
 
 1. Record the values for the **PRIMARY CONNECTION STRING** field. You'll use this value in a later step.
 
+![Azure Cosmos DB connection string](./images/cosmos_credentials.png)
 <!-- > Grab setup instructions from quickstart https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/cosmos-db/mongodb/quickstart-nodejs.md -->
-
 
 ---
 
@@ -78,10 +71,12 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
    ```.env
    PORT=3001
-   MONGODB_URL="mongodb://<connection string>"
+   MONGODB_URL="<connection string saved from above. Starts with 'mongodb://'>"
    ```
 
-### Run locally
+1. Save file
+
+### Run app locally to validate Azure Cosmos DB configuration
 
 1. In the menu bar, expand **Terminal** > Select **New Terminal**
 1. Install the node modules
@@ -98,6 +93,8 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 
 1. In a browser, navigate to http://localhost:3001. You should see something like this:
 
+![web page](./images/app_page.png)
+
 ### Deploy app to Azure
 
 1. In Visual Studio Code, in the Activity Bar, select the Azure logo.
@@ -107,9 +104,11 @@ In Visual Studio Code, in the [Activity Bar](https://code.visualstudio.com/docs/
 1. In Select a pricing tier, select **Free (F1)** and wait for the resources to be provisioned in Azure.
 1. In the popup **Always deploy the workspace "AZUREFORDEVELOPERS" to \<app-name>"**, select **Yes**. This way, as long as you're in the same workspace, Visual Studio Code deploys to the same App Service app each time.
 
-    While Visual Studio Code provisions the Azure resources and deploys the code, it shows [progress notifications](https://code.visualstudio.com/api/references/extension-guidelines#notifications).
+    While Visual Studio Code provisions the Azure resources and deploys the code, it shows [progress notifications](https://code.visualstudio.com/api/references/extension-guidelines#notifications?ocid=VTD_AzureDev).
 
 1. Once deployment completes, select **Browse Website** in the notification popup. The browser should display the feedback form page.
+
+---
 
 ### Redeploy updates
 
@@ -133,7 +132,7 @@ You can deploy changes to this app by making edits in Visual Studio Code, saving
       </div>
     ```
 
-2. In the **App Service** explorer, select the **Deploy to Web App** icon again, confirm by clicking **Deploy** again.
+1. In the **App Service** explorer, select the **Deploy to Web App** icon again, confirm by clicking **Deploy** again.
 1. Wait for deployment to complete, then select **Browse Website** in the notification popup. You should see that the title is now colored orange.
 
 ---
